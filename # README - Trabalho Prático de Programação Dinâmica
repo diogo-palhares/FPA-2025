@@ -1,0 +1,17 @@
+# README - Trabalho Prático de Programação Dinâmica
+
+## 1. Como a programação dinâmica foi aplicada na solução?
+Utilizamos programação dinâmica para construir uma tabela que armazena o comprimento da maior subsequência comum entre as sequências de Helena e Marcus. A tabela permite evitar recomputações de subproblemas.
+
+## 2. Por que o uso de backtracking é necessário neste problema?
+O backtracking é necessário para reconstruir todas as possíveis subsequências mais longas. A tabela da programação dinâmica fornece apenas o tamanho máximo, e o backtracking explora todos os caminhos válidos que levam a esse tamanho.
+
+## 3. Houve desafios na implementação? Quais? Como foram superados?
+Sim. O principal desafio foi evitar duplicatas nas subsequências e garantir que todas fossem geradas corretamente e em ordem alfabética. Resolvemos isso usando um HashSet para armazenar os resultados sem repetição e uma lista ordenada para exibir.
+
+## 4. Qual é a complexidade da solução proposta?
+- Versão com apenas programação dinâmica: O(n*m), onde n e m são os tamanhos das sequências.
+- Versão com programação dinâmica + backtracking: O(2^(n+m)) no pior caso (pois pode haver múltiplos caminhos com mesmo valor de LCS), porém limitado a 1000 subsequências distintas conforme o enunciado.
+
+## 5. O que o grupo aprendeu ao resolver esse problema?
+Aprendemos como utilizar programação dinâmica não apenas para resolver problemas de otimização, mas também como base para reconstruir soluções completas usando técnicas como backtracking. Aprendemos também sobre complexidade e tratamento eficiente de conjuntos de dados com C#.
