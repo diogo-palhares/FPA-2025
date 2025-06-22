@@ -9,7 +9,7 @@
 Utilizamos programação dinâmica para construir uma tabela (matriz DP) que armazena o comprimento da maior subsequência comum entre as sequências de Helena e Marcus. Essa tabela permite evitar recomputações de subproblemas ao reaproveitar os resultados parciais já calculados. Também foi implementada uma variação onde a própria tabela armazena conjuntos com as subsequências parciais, eliminando a necessidade de backtracking, embora com custo maior de memória.
 
 ## 2. Por que o uso de backtracking é necessário neste problema?
-O backtracking é necessário na abordagem tradicional para reconstruir todas as possíveis subsequências comuns mais longas. A tabela construída pela programação dinâmica guarda apenas os tamanhos das LCS parciais, não suas composições. O backtracking percorre a tabela de forma recursiva, explorando todos os caminhos que levam ao valor máximo da LCS, adicionando cada solução válida a um conjunto de resultados.
+O backtracking é necessário na abordagem tradicional para reconstruir todas as possíveis subsequências comuns mais longas. A tabela construída pela programação dinâmica guarda apenas os tamanhos das LCS parciais, não suas composições. O backtracking percorre a tabela de forma recursiva, explorando todos os caminhos que levam ao valor máximo da LCS, adicionando cada solução válida a um conjunto de resultados. e Também porque para conjuntos grandes, o tempo de execução se torna muito longo sem a utilização de backtracking.
 
 ## 3. Houve desafios na implementação? Quais? Como foram superados?
 Sim. Os principais desafios foram:
