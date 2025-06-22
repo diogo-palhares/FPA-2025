@@ -136,3 +136,14 @@ output_box.pack(padx=10, pady=5)
 
 # Inicia o loop principal da GUI, que mantém a janela aberta e responde a eventos
 root.mainloop()
+
+# Exemplos com muitas subsequencias:
+
+# ajsifbasijbfsaijfbiasj
+# ggijfaugauf9bgafio
+
+# faspfsapiniposngaiasngapsighapsigh
+# sagsaighjpqwihgpiqwhaspghsapgasgjp
+
+# ijkijkii
+# ikjikji
