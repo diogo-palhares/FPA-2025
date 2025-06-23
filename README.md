@@ -28,18 +28,67 @@ Ordenando os resultados com sorted() antes de exibir.
 
 Implementando testes comparativos com psutil para avaliar e entender os impactos de memória entre as abordagens.
 
-## 4. Qual é a complexidade da solução proposta?
-Versão com apenas programação dinâmica (sem backtracking):
+## 4. Qual é a complexidade da solução proposta? Faça o cálculo da ordem de complexidade passo a passo para:
 
-Tempo: O(n × m), onde n e m são os tamanhos das sequências.
+---
 
-Espaço: Pode chegar a O(n × m × k), onde k é o número médio de subsequências por célula — potencialmente muito alto.
+### a) Versão utilizando apenas programação dinâmica (`lcs-dinamico.py`):
 
-Versão com programação dinâmica + backtracking:
+A matriz `dp` é criada com dimensão `(m+1) × (n+1)` e armazena, em cada célula, um **conjunto de todas as subsequências comuns mais longas** encontradas até aquele ponto. Essas subsequências são strings de tamanho até `L` (comprimento da LCS), e podem haver até `k` subsequências distintas (o enunciado limita em até 1000).
 
-Tempo: O(2^(n+m)) no pior caso, pois o número de caminhos válidos pode crescer exponencialmente, embora a tabela DP limite as chamadas.
+No trecho abaixo, vemos que cada célula do `dp` armazena e atualiza conjuntos de strings, com concatenação explícita:
 
-Espaço: O(n × m) para a tabela de inteiros + uso da pilha de chamadas recursivas.
+```python
+dp[i][j] = {lcs + seq1[i-1] for lcs in dp[i-1][j-1]}
+```
+
+Além disso, quando os caracteres são diferentes, o algoritmo faz união entre conjuntos:
+
+```python
+dp[i][j] = dp[i-1][j] | dp[i][j-1]
+```
+
+Portanto:
+
+- **Complexidade de Tempo:**
+  - **O(m × n × k × L)** no pior caso, com concatenação de até `k` strings por célula
+  - **Ω(m × n)** no melhor caso (poucas ou nenhuma coincidência)
+  - **Θ(m × n × k × L)** no caso médio
+
+- **Complexidade de Espaço:**
+  - **O(m × n × k × L)** (armazenamento de todas as subsequências por célula)
+  - **Ω(m × n)** no melhor caso
+  - **Θ(m × n × k × L)** no caso médio
+
+---
+
+### b) Versão com programação dinâmica e backtracking (`lcs-completo.py`):
+
+Primeiro, é construída a matriz `dp` que armazena apenas inteiros com o tamanho da LCS:
+
+```python
+dp[i+1][j+1] = dp[i][j] + 1
+```
+
+Em seguida, o algoritmo aplica **backtracking recursivo** para reconstruir todas as LCS de tamanho máximo:
+
+```python
+results.add(''.join(reversed(path)))
+```
+
+Diferente da versão anterior, aqui **não são armazenadas todas as soluções intermediárias** — apenas a matriz de inteiros e o conjunto final com as LCS.
+
+Portanto:
+
+- **Complexidade de Tempo:**
+  - **O(m × n + k × L)** no pior caso, somando o custo de construir a matriz e gerar todas as `k` subsequências
+  - **Ω(m × n)** no melhor caso
+  - **Θ(m × n + k × L)** no caso médio
+
+- **Complexidade de Espaço:**
+  - **O(m × n + k × L)** (matriz + conjunto de resultados)
+  - **Ω(m × n)** no melhor caso
+  - **Θ(m × n + k × L)** no caso médio
 
 ## 5. O que o grupo aprendeu ao resolver esse problema?
 Aprendemos a aplicar a programação dinâmica como ferramenta para dividir e resolver problemas complexos, e também a usar backtracking para reconstruir soluções completas a partir de uma estrutura de apoio. Aprendemos a importância de:
