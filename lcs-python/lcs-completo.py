@@ -96,3 +96,14 @@ output_box = scrolledtext.ScrolledText(root, width=60, height=15)
 output_box.pack(padx=10, pady=5)
 
 root.mainloop()
+
+# Exemplos com muitas subsequencias:
+
+# ajsifbasijbfsaijfbiasj
+# ggijfaugauf9bgafio
+
+# faspfsapiniposngaiasngapsighapsigh
+# sagsaighjpqwihgpiqwhaspghsapgasgjp
+
+# ijkijkii
+# ikjikji
