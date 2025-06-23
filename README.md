@@ -11,7 +11,7 @@
 * Diogo Campos Palhares
 * Guilherme Henrique de Lima Machado
   
-  ## Descrição
+## Descrição
 * Data: Junho de 2025
 * Versão: 1.0
 * Programação Dinâmica + Backtracking para listar todas as maiores subsequências comuns em ordem alfabética e GUI
