@@ -12,9 +12,9 @@
 * Guilherme Henrique de Lima Machado
   
   ## Descrição
-Data: Junho de 2025
-Versão: 1.0
-Programação Dinâmica + Backtracking para listar todas as maiores subsequências comuns em ordem alfabética e GUI
+* Data: Junho de 2025
+* Versão: 1.0
+* Programação Dinâmica + Backtracking para listar todas as maiores subsequências comuns em ordem alfabética e GUI
 
 ## 1. Como a programação dinâmica foi aplicada na solução?
 Utilizamos programação dinâmica para construir uma tabela (matriz DP) que armazena o comprimento da maior subsequência comum entre as sequências de Helena e Marcus. Essa tabela permite evitar recomputações de subproblemas ao reaproveitar os resultados parciais já calculados. Também foi implementada uma variação onde a própria tabela armazena conjuntos com as subsequências parciais, eliminando a necessidade de backtracking, embora com custo maior de memória.
