@@ -1,3 +1,8 @@
+# Autores: Guilherme Machado, Diogo Palhares, Ana Clara, Ana Flavia e Davi Junio Roccha
+# Data: Junho de 2025
+# Versão: 1.0
+# Descrição: Programação Dinâmica + Backtracking para listar todas as maiores subsequências comuns em ordem alfabética e GUI
+
 import psutil              # Biblioteca para monitorar o uso de recursos do sistema (memória, CPU etc)
 import os                  # Biblioteca para interagir com o sistema operacional (pegar PID do processo)
 import time                # Biblioteca para medir tempo de execução
