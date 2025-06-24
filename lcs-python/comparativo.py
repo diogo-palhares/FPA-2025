@@ -44,7 +44,9 @@ def lcs_backtracking(seq1, seq2):
     dp = build_dp_table(seq1, seq2)                    # Constroi a tabela dp
     results = set()                                    # Conjunto para armazenar as LCS sem repetições
     backtrack(dp, seq1, seq2, len(seq1), len(seq2), [], results)  # Executa backtracking
+    print_memory_usage("Depois")  
     return sorted(results)                             # Retorna as LCS ordenadas alfabeticamente
+
 
 # Função que resolve o problema usando somente programação dinâmica armazenando conjuntos de subsequências
 def all_lcs_dp(seq1, seq2):
@@ -77,11 +79,12 @@ def all_lcs_dp(seq1, seq2):
                 else:
                     # Se empatados, une os dois conjuntos (evitando duplicatas)
                     dp[i][j] = dp[i-1][j].union(dp[i][j-1])
+    print_memory_usage("Depois")  
     return sorted(dp[m][n])                            # Retorna as LCS ordenadas da última célula
 
 # Sequências grandes para testar os dois métodos
-seq1 = "abcbdab" * 25                               # Sequência seq1 repetida n vezes (n*7)
-seq2 = "bdcababc" * 25                              # Sequência seq2 repetida n vezes (n*8)
+seq1 = "abcbdab" * 30                               # Sequência seq1 repetida n vezes (n*7)
+seq2 = "bdcababc" * 30                              # Sequência seq2 repetida n vezes (n*8)
 
 print("Teste Backtracking:")
 print_memory_usage("Início")                         # Imprime uso de memória antes do processamento
